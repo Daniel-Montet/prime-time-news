@@ -1,15 +1,7 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 <body>
     <!--headlines section-->
     <h3>headlines</h3>
-    <ul>
-        {% for headline in headlines %}
-            <div>
-                <h3>{{headline.title}}</h3>
-                <p>{{headline.description}}</p>
-                <p>{{headline.content}}</p>
-
-            </div>
-        {% endfor %}
-    </ul>
+    {{ macro.displayHeadlineList(headlines)}}
 </body>
