@@ -13,3 +13,9 @@ class HeadlineTest(unittest.TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.news_headline,Headline))
+
+    #write test to confirm if object is instanciated correctly
+
+
+if __name__=if __name__ == "__main__":
+    unittest.main()
