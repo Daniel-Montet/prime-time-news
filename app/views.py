@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from app import app
 from .request import get_headline,search_country
 
@@ -10,7 +10,11 @@ def index():
 
     """
     headlines = get_headline()
-    return render_template('index.html',headlines =headlines)
+    search_input = request.args.get("country_name_querry")
+    if search_input:
+        return redirect(url_for('search_specific_country',countryname=search_input))
+    else:
+        return render_template('index.html',headlines =headlines)
 
 
 @app.route('/headlines/<headlines>')
