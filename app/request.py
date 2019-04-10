@@ -29,9 +29,10 @@ def process_results(headlines_list):
         title = article_item.get('title')
         description = article_item.get('description')
         content = article_item.get('content')
+        urlToImage= article_item.get('urlToImage')
 
         if title:
-            article_object = Headline(title,description,content)
+            article_object = Headline(title,description,content,urlToImage)
             headline_results.append(article_object)
 
     return headline_results
