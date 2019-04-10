@@ -58,4 +58,18 @@ def get_headline():
 
     return headline_results
 
+def search_country(country):
+    search_country_url = 'https://newsapi.org/v2/top-headlines?country={}&apiKey={country,api_key}'
 
+    with urllib.request.urlopen(search_country_url) as url:
+        search_country_data = url.read()
+        search_country_response = json.loads(search_country_data)
+
+        search_country_results = None
+
+        if search_country_response['articles']:
+            search_country_list = search_country_response['articles']
+            search_country_results = process_results(search_country_list)
+
+
+    return search_country_results
