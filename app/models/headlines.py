@@ -4,5 +4,7 @@ class Headline:
 
     """
 
-    def __init__(self,title):
-        self.title=title
+    def __init__(self,title,description,content):
+        self.title = title
+        self.description = description
+        self.content = content

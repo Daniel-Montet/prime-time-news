@@ -1,0 +1,10 @@
+{% macro displayHeadlineList(headlines) %}
+
+    {% for headline in headlines %}
+    <div>
+        <h3>{{headline.title}}</h3>
+        <p>{{headline.description}}</p>
+        <p>{{headline.content}}</p>
+
+    </div>
+    {% endfor %

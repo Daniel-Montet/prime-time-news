@@ -27,15 +27,17 @@ def process_results(headlines_list):
 
     for article_item in headlines_list:
         title = article_item.get('title')
+        description = article_item.get('description')
+        content = article_item.get('content')
 
         if title:
-            article_object = Headline(title)
+            article_object = Headline(title,description,content)
             headline_results.append(article_object)
 
     return headline_results
 
 
-    
+
 def get_headline():
     """
     function to get json responce to our url request

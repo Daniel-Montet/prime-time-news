@@ -1,10 +1,15 @@
-<h1>it works</h1>
+{% import 'macros.html' as macro%}
 <body>
     <!--headlines section-->
     <h3>headlines</h3>
     <ul>
         {% for headline in headlines %}
-            <li>{{headline.title}}</li>
+            <div>
+                <h3>{{headline.title}}</h3>
+                <p>{{headline.description}}</p>
+                <p>{{headline.content}}</p>
+
+            </div>
         {% endfor %}
     </ul>
 </body>
