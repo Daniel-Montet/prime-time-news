@@ -1,14 +1,16 @@
 {% macro displayHeadlineList(headlines) %}
 
+
     {% for headline in headlines %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
             <img src="{{ headline.urlToImage }}" alt="" class="img-responsive">
             
                 <p>{{headline.title}}</p>
-                <a href="/movie/{{headline.url}}"><strong><small>Read more</small></strong></a>
+                <a href="{{headline.url}}"><strong><small>Read more</small></strong></a>
            
         </div>
 
     {% endfor %}
 
 {% endmacro %}
+
