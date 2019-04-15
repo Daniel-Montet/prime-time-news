@@ -1,6 +1,6 @@
 import unittest
-from models import headlines
-Headline = headlines.Headline
+from app.models import Headline
+#Headline = headlines.Headline
 
 
 class HeadlineTest(unittest.TestCase):
@@ -18,4 +18,4 @@ class HeadlineTest(unittest.TestCase):
 
 
 if __name__=if __name__ == "__main__":
-    unittest.main()
+    
