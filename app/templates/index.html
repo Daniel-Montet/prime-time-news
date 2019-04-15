@@ -22,202 +22,868 @@
 
 <!--headlines section-->
 
-<div id="body" class="container-fluid">
-    <h3>Welcome to Prime Time News</h3>
-    <h4>Top Headlines</h4>
-  <div class="container-fluid">
-      <div class="row">
-          <div id="headlines" class="col-md-7">
-            <!--Carousel Wrapper-->
-            <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-              <!--Indicators-->
-              <ol class="carousel-indicators">
-                <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-2" data-slide-to="1"></li>
-                <li data-target="#carousel-example-2" data-slide-to="2"></li>
-              </ol>id="carousel"
-              <!--/.Indicators-->
-              <!--Slides-->
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                  <!--Mask color-->
-                  {% for headline in headlines %}
-                  {% if headline.urlToImage%}
-                  <div class="view">
-                    <img class="d-block w-100" src="{{headline.urlToImage}}" alt="Second slide">
-                    <div class="mask rgba-black-strong"></div>
-                  </div>
-                  <div class="carousel-caption">
-                    <h3 class="h3-responsive">{{headline.title}}</h3>
-                    <a href="{{headline.url}}">Read More</a>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <!--Mask color-->
-
-                  {% elif headline.urlToImage%}
-                  <div class="view">
-                    <img class="d-block w-100" src="{{headline.urlToImage}}" alt="Second slide">
-                    <div class="mask rgba-black-strong"></div>
-                  </div>
-                  <div class="carousel-caption">
-                    <h3 class="h3-responsive">{{headline.title}}</h3>
-                    <a href="{{headline.url}}">Read More</a>
-                  </div>
-
-                </div>
-                {%endif%}
-                {%endfor%}
-
-              </div>
-              <!--/.Slides-->
-              <!--Controls-->
-              <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-              <!--/.Controls-->
-            </div>
-            <!--/.Carousel Wrapper-->
-
-          </div>
-          <div class="col-md-5">
-            <h4>Global News</h4>
-
-              <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-                  <!--Indicators-->
-                  <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-2" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-2" data-slide-to="2"></li>
-                  </ol>
-                  <!--/.Indicators-->
-                  <!--Slides-->
-                  <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                      <!--Mask color-->
-                      {% for item in general %}
-                      {% if item.urlToImage%}
-                      <div class="view">
-                        <img class="d-block w-100" src="{{item.urlToImage}}" alt="Second slide">
-                        <div class="mask rgba-black-strong"></div>
-                      </div>
-                      <div class="carousel-caption">
-                        <h3 class="h3-responsive">{{item.title}}</h3>
-                        <a href="{{item.url}}">Read More</a>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <!--Mask color-->
-
-                      {% elif item.urlToImage%}
-                      <div class="view">
-                        <img class="d-block w-100" src="{{item.urlToImage}}" alt="Second slide">
-                        <div class="mask rgba-black-strong"></div>
-                      </div>
-                      <div class="carousel-caption">
-                        <h3 class="h3-responsive">{{item.title}}</h3>
-                        <a href="{{item.url}}">Read More</a>
-                      </div>
-
-                    </div>
-                    {%endif%}
-                    {%endfor%}
-
-                  </div>
-                  <!--/.Slides-->
-                  <!--Controls-->
-                  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                  <!--/.Controls-->
-                </div>
-                <!--/.Carousel Wrapper-->
-
-          </div>
-
-      </div>
-  </div>
+<div class="container-fluid">
+  <h3>Welcome to Prime Time News</h3>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-          <h4>Business News</h4>
-          <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-              <!--Indicators-->
-              <ol class="carousel-indicators">
-                <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-2" data-slide-to="1"></li>
-                <li data-target="#carousel-example-2" data-slide-to="2"></li>
-              </ol>
-              <!--/.Indicators-->
-              <!--Slides-->
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                  <!--Mask color-->
-                  {% for item in business %}
-                  {% if item.urlToImage%}
-                  <div class="view">
-                    <img class="d-block w-100" src="{{item.urlToImage}}" alt="Second slide">
-                    <div class="mask rgba-black-strong"></div>
-                  </div>
-                  <div class="carousel-caption">
-                    <h3 class="h3-responsive">{{item.title}}</h3>
-                    <a href="{{item.url}}">Read More</a>
-                  </div>
+      <div class="col-md-6">
+        <h4>Headlines</h4>
+        <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+          <!--Indicators-->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-2" data-slide-to="1"></li>
+            <li data-target="#carousel-example-2" data-slide-to="2"></li>
+          </ol>
+          <!--/.Indicators-->
+          <!--Slides-->
+          <div class="carousel-inner" role="listbox">
+              
+            <div class="carousel-item active">
+                {%for headline in headlines%}
+              {%if headline.urlToImage%}
+              <div class="view">
+                <img id="bigimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                  alt="First slide">
+                <div class="mask rgba-black-light"></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive">{{headline.title}}</h3>
+                <a href="{{headline.url}}">Read More</a>
+              </div>
+            </div>
+            
+            <div class="carousel-item">
+                {%elif headline.urlToImage%}
+                <div class="view">
+                  <img id="bigimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
                 </div>
-                <div class="carousel-item">
-                  <!--Mask color-->
-
-                  {% elif item.urlToImage%}
-                  <div class="view">
-                    <img class="d-block w-100" src="{{item.urlToImage}}" alt="Second slide">
-                    <div class="mask rgba-black-strong"></div>
-                  </div>
-                  <div class="carousel-caption">
-                    <h3 class="h3-responsive">{{item.title}}</h3>
-                    <a href="{{item.url}}">Read More</a>
-                  </div>
-
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{headline.title}}</h3>
+                  <a href="{{headline.url}}">Read More</a>
                 </div>
                 {%endif%}
                 {%endfor%}
-
               </div>
-              <!--/.Slides-->
-              <!--Controls-->
-              <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-              <!--/.Controls-->
+              
+            
+            
+          </div>
+          <!--/.Slides-->
+          <!--Controls-->
+          <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <!--/.Controls-->
+        </div>
+        <!--/.Carousel Wrapper-->
+      </div>
+      <div class="col-md-6">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Cnn</h4>
+                    <div id="carousel-example-9" class="carousel slide carousel-fade" data-ride="carousel">
+                      <!--Indicators-->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                      </ol>
+                      <!--/.Indicators-->
+                      <!--Slides-->
+                      <div class="carousel-inner" role="listbox">
+                          
+                        <div class="carousel-item active">
+                            {%for headline in cnn%}
+                          {%if headline.urlToImage%}
+                          <div class="view">
+                            <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                              alt="First slide">
+                            <div class="mask rgba-black-light"></div>
+                          </div>
+                          <div class="carousel-caption">
+                            <h3 class="h3-responsive">{{headline.title}}</h3>
+                            <a href="{{headline.url}}">Read More</a>
+                          </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            {%elif headline.urlToImage%}
+                            <div class="view">
+                              <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                                alt="First slide">
+                              <div class="mask rgba-black-light"></div>
+                            </div>
+                            <div class="carousel-caption">
+                              <h3 class="h3-responsive">{{headline.title}}</h3>
+                              <a href="{{headline.url}}">Read More</a>
+                            </div>
+                            {%endif%}
+                            {%endfor%}
+                          </div>
+                          
+                        
+                        
+                      </div>
+                      <!--/.Slides-->
+                      <!--Controls-->
+                      <a class="carousel-control-prev" href="#carousel-example-9" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-example-9" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                      <!--/.Controls-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Bbc</h4>
+                    <div id="carousel-example-10" class="carousel slide carousel-fade" data-ride="carousel">
+                      <!--Indicators-->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                      </ol>
+                      <!--/.Indicators-->
+                      <!--Slides-->
+                      <div class="carousel-inner" role="listbox">
+                          
+                        <div class="carousel-item active">
+                            {%for headline in bbc_news%}
+                          {%if headline.urlToImage%}
+                          <div class="view">
+                            <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                              alt="First slide">
+                            <div class="mask rgba-black-light"></div>
+                          </div>
+                          <div class="carousel-caption">
+                            <h3 class="h3-responsive">{{headline.title}}</h3>
+                            <a href="{{headline.url}}">Read More</a>
+                          </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            {%elif headline.urlToImage%}
+                            <div class="view">
+                              <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                                alt="First slide">
+                              <div class="mask rgba-black-light"></div>
+                            </div>
+                            <div class="carousel-caption">
+                              <h3 class="h3-responsive">{{headline.title}}</h3>
+                              <a href="{{headline.url}}">Read More</a>
+                            </div>
+                            {%endif%}
+                            {%endfor%}
+                          </div>
+                          
+                        
+                        
+                      </div>
+                      <!--/.Slides-->
+                      <!--Controls-->
+                      <a class="carousel-control-prev" href="#carousel-example-10" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-example-10" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                      <!--/.Controls-->
+                    </div>
+                  </div>
             </div>
-            <!--/.Carousel Wrapper-->
-
-      </div>
-      <div class="col-md-4">
-
-      </div>
-      <div class="col-md-4">
-
+            
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Aljazeera</h4>
+                    <div id="carousel-example-11" class="carousel slide carousel-fade" data-ride="carousel">
+                      <!--Indicators-->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                      </ol>
+                      <!--/.Indicators-->
+                      <!--Slides-->
+                      <div class="carousel-inner" role="listbox">
+                          
+                        <div class="carousel-item active">
+                            {%for headline in al_jazeera_english%}
+                          {%if headline.urlToImage%}
+                          <div class="view">
+                            <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                              alt="First slide">
+                            <div class="mask rgba-black-light"></div>
+                          </div>
+                          <div class="carousel-caption">
+                            <h3 class="h3-responsive">{{headline.title}}</h3>
+                            <a href="{{headline.url}}">Read More</a>
+                          </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            {%elif headline.urlToImage%}
+                            <div class="view">
+                              <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                                alt="First slide">
+                              <div class="mask rgba-black-light"></div>
+                            </div>
+                            <div class="carousel-caption">
+                              <h3 class="h3-responsive">{{headline.title}}</h3>
+                              <a href="{{headline.url}}">Read More</a>
+                            </div>
+                            {%endif%}
+                            {%endfor%}
+                          </div>
+                          
+                        
+                        
+                      </div>
+                      <!--/.Slides-->
+                      <!--Controls-->
+                      <a class="carousel-control-prev" href="#carousel-example-11" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-example-11" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                      <!--/.Controls-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>ABC News</h4>
+                    <div id="carousel-example-12" class="carousel slide carousel-fade" data-ride="carousel">
+                      <!--Indicators-->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                      </ol>
+                      <!--/.Indicators-->
+                      <!--Slides-->
+                      <div class="carousel-inner" role="listbox">
+                          
+                        <div class="carousel-item active">
+                            {%for headline in abc_news%}
+                          {%if headline.urlToImage%}
+                          <div class="view">
+                            <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                              alt="First slide">
+                            <div class="mask rgba-black-light"></div>
+                          </div>
+                          <div class="carousel-caption">
+                            <h3 class="h3-responsive">{{headline.title}}</h3>
+                            <a href="{{headline.url}}">Read More</a>
+                          </div>
+                        </div>
+                        
+                        <div class="carousel-item">
+                            {%elif headline.urlToImage%}
+                            <div class="view">
+                              <img id="sorcesimg" class="d-block w-100" src="{{headline.urlToImage}}"
+                                alt="First slide">
+                              <div class="mask rgba-black-light"></div>
+                            </div>
+                            <div class="carousel-caption">
+                              <h3 class="h3-responsive">{{headline.title}}</h3>
+                              <a href="{{headline.url}}">Read More</a>
+                            </div>
+                            {%endif%}
+                            {%endfor%}
+                          </div>
+                          
+                        
+                        
+                      </div>
+                      <!--/.Slides-->
+                      <!--Controls-->
+                      <a class="carousel-control-prev" href="#carousel-example-12" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-example-12" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                      <!--/.Controls-->
+                    </div>
+                </div>
+            </div>
+              
+          </div>
+          
       </div>
     </div>
   </div>
-
+  <hr>
+  <div class="container-fluid">
+    <h4>News around the Globe</h4>
+    <div class="row">
+      <div class="col-md-4">
+          <h4>Business News</h4>
+          <div id="carousel-example-3" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                
+              <div class="carousel-item active">
+                  {%for item in business%}
+                {%if item.urlToImage%}
+                <div class="view">
+                  <img  class="d-block w-100" src="{{item.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
+                </div>
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{item.title}}</h3>
+                  <a href="{{item.url}}">Read More</a>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                  {%elif item.urlToImage%}
+                  <div class="view">
+                    <img class="d-block w-100" src="{{item.urlToImage}}"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">{{item.title}}</h3>
+                    <a href="{{item.url}}">Read More</a>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+                
+              
+              
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-3" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-3" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+      </div>
+      <div class="col-md-4">
+          <h4>Science</h4>
+          <div id="carousel-example-4" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                
+              <div class="carousel-item active">
+                {%for item in science%}
+                {%if item.urlToImage%}
+                <div class="view">
+                  <img class="d-block w-100" src="{{item.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
+                </div>
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{item.title}}</h3>
+                  <a href="{{item.url}}">Read More</a>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                  {%elif item.urlToImage%}
+                  <div class="view">
+                    <img class="d-block w-100" src="{{item.urlToImage}}"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">{{item.title}}</h3>
+                    <a href="{{item.url}}">Read More</a>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+                
+              
+              
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-4" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-4" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+      </div>
+      <div class="col-md-4">
+          <h4>Health</h4>
+          <div id="carousel-example-5" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                
+              <div class="carousel-item active">
+                  {%for item in health%}
+                {%if item.urlToImage%}
+                <div class="view">
+                  <img class="d-block w-100" src="{{item.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
+                </div>
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{item.title}}</h3>
+                  <a href="{{item.url}}">Read More</a>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                  {%elif item.urlToImage%}
+                  <div class="view">
+                    <img class="d-block w-100" src="{{item.urlToImage}}"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">{{item.title}}</h3>
+                    <a href="{{item.url}}">Read More</a>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+                
+              
+              
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-5" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-5" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7">
+              <h4>Sports News</h4>
+              <div id="carousel-example-6" class="carousel slide carousel-fade" data-ride="carousel">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                </ol>
+                <!--/.Indicators-->
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    
+                  <div class="carousel-item active">
+                    {%for item in sports%}
+                    {%if item.urlToImage%}
+                    <div class="view">
+                      <img id="bigimg" class="d-block w-100" src="{{item.urlToImage}}"
+                        alt="First slide">
+                      <div class="mask rgba-black-light"></div>
+                    </div>
+                    <div class="carousel-caption">
+                      <h3 class="h3-responsive">{{item.title}}</h3>
+                      <a href="{{item.url}}">Read More</a>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-item">
+                      {%elif item.urlToImage%}
+                      <div class="view">
+                        <img id="bigimg" class="d-block w-100" src="{{item.urlToImage}}"
+                          alt="First slide">
+                        <div class="mask rgba-black-light"></div>
+                      </div>
+                      <div class="carousel-caption">
+                        <h3 class="h3-responsive">{{item.title}}</h3>
+                        <a href="{{item.url}}">Read More</a>
+                      </div>
+                      {%endif%}
+                      {%endfor%}
+                    </div>
+                    
+                  
+                  
+                </div>
+                <!--/.Slides-->
+                <!--Controls-->
+                <a class="carousel-control-prev" href="#carousel-example-6" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-example-6" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <!--/.Controls-->
+              </div>
+              <!--/.Carousel Wrapper-->
+          
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+          <h4>General News</h4>
+          <div id="carousel-example-7" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                
+              <div class="carousel-item active">
+                  {%for item in general%}
+                {%if item.urlToImage%}
+                <div class="view">
+                  <img class="d-block w-100" src="{{item.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
+                </div>
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{item.title}}</h3>
+                  <a href="{{item.url}}">Read More</a>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                  {%elif item.urlToImage%}
+                  <div class="view">
+                    <img class="d-block w-100" src="{{item.urlToImage}}"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">{{item.title}}</h3>
+                    <a href="{{item.url}}">Read More</a>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+                
+              
+              
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-7" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-7" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+      </div>
+      <div class="col-md-4">
+          <h4>Entertainment World</h4>
+          <div id="carousel-example-8" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                
+              <div class="carousel-item active">
+                  {%for item in entertainment%}
+                {%if item.urlToImage%}
+                <div class="view">
+                  <img class="d-block w-100" src="{{item.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
+                </div>
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{item.title}}</h3>
+                  <a href="{{item.url}}">Read More</a>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                  {%elif item.urlToImage%}
+                  <div class="view">
+                    <img class="d-block w-100" src="{{item.urlToImage}}"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">{{item.title}}</h3>
+                    <a href="{{item.url}}">Read More</a>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+                
+              
+              
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-8" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-8" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+      </div>
+      <div class="col-md-4">
+          <h4>New in Technology</h4>
+          <div id="carousel-example-9" class="carousel slide carousel-fade" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-2" data-slide-to="1"></li>
+              <li data-target="#carousel-example-2" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                
+              <div class="carousel-item active">
+                  {%for item in technology%}
+                {%if item.urlToImage%}
+                <div class="view">
+                  <img class="d-block w-100" src="{{item.urlToImage}}"
+                    alt="First slide">
+                  <div class="mask rgba-black-light"></div>
+                </div>
+                <div class="carousel-caption">
+                  <h3 class="h3-responsive">{{item.title}}</h3>
+                  <a href="{{item.url}}">Read More</a>
+                </div>
+              </div>
+              
+              <div class="carousel-item">
+                  {%elif item.urlToImage%}
+                  <div class="view">
+                    <img class="d-block w-100" src="{{item.urlToImage}}"
+                      alt="First slide">
+                    <div class="mask rgba-black-light"></div>
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="h3-responsive">{{item.title}}</h3>
+                    <a href="{{item.url}}">Read More</a>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+                
+              
+              
+            </div>
+            <!--/.Slides-->
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-9" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-9" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+          </div>
+          <!--/.Carousel Wrapper-->
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <!-- Footer -->
 </div>
+<hr>
+<footer class="page-footer font-small indigo">
 
+    <!-- Footer Links -->
+    <div class="container-fluid">
+
+      <!-- Grid row-->
+      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">About us</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">Sources</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">Awards</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">Help</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">Contact</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+      <hr class="rgba-white-light" style="margin: 0 15%;">
+
+      <!-- Grid row-->
+      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+        <!-- Grid column -->
+        <div class="col-md-8 col-12 mt-5">
+          <p style="line-height: 1.7rem">The content displayed in our website is sourced from a third party API and is not by any means written by us.
+            Details about the API used can be found <a href="https://newsapi.org/"><strong>here</strong></a>
+        </p>
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+      <!-- Grid row-->
+      <div class="row pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-12">
+
+          <div class="mb-5 flex-center">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+            </a>
+            <!-- Google +-->
+            <a class="gplus-ic">
+              <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic">
+              <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+            </a>
+            <!--Pinterest-->
+            <a class="pin-ic">
+              <i class="fab fa-pinterest fa-lg white-text"> </i>
+            </a>
+
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> Prime-time-news.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
 
 
 <!--javascript-->
@@ -238,5 +904,7 @@
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+ 
 
 {% endblock%}

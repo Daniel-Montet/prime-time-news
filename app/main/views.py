@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..requests import get_headline,search_country,get_business_category,get_entertainment_category,get_general_category,get_health_category,get_science_category,get_sports_category,get_technology_category
+from ..requests import get_headline,search_country,get_business_category,get_entertainment_category,get_general_category,get_health_category,get_science_category,get_sports_category,get_technology_category,get_newsid
 #from .models import review
 #from .forms import ReviewForm
 #Review = review.Review
@@ -22,12 +22,19 @@ def index():
     sports= get_sports_category()
     technology= get_technology_category()
     search_input = request.args.get('news_querry')
+    bbc_news=get_newsid('bbc-news')
+    techcrunch=get_newsid('techcrunch')
+    business_insider=get_newsid('business-insider')
+    abc_news=get_newsid('abc-news')
+    al_jazeera_english=get_newsid('al-jazeera-english')
+    cnn=get_newsid('cnn')
         
     if search_input:
         return redirect(url_for('search_specific_country',country_name=search_input))
     else:
         return render_template('index.html',headlines =headlines, business=business, entertainment=entertainment, general=general,
-        health=health, science=science, sports=sports, technology=technology)
+        health=health, science=science, sports=sports, technology=technology,bbc_news=bbc_news,techcrunch=techcrunch,business_insider=business_insider
+        ,abc_news=abc_news,al_jazeera_english=al_jazeera_english,cnn=cnn)
 
 
 @main.route('/headlines/<headlines>')

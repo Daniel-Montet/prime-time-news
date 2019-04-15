@@ -7,11 +7,12 @@ from .models import Headline
 
 # Getting api key
 api_key = '67b973a2cb15466982de38b10153bfe5'
-NEWS_API_BASE_URL = "https://newsapi.org/v2/top-headlines?country=us&apiKey={}"
+
 # Getting the movie base url
 base_url = "https://newsapi.org/v2/top-headlines?country=us&apiKey={}"
 #NEWS_API_KEY = '67b973a2cb15466982de38b10153bfe5'
 #SECRET_KEY = 'rrrrrraaaaah'
+
 
 print(base_url)
 print(api_key)
@@ -36,10 +37,11 @@ def process_results(headlines_list):
         urlToImage = article_item.get('urlToImage')
         url = article_item.get('url')
         category = article_item.get('category')
+        id= article_item.get('id')
 
         if title:
             article_object = Headline(
-                title, description, content, urlToImage, url, category)
+                title, description, content, urlToImage, url, category,id)
             headline_results.append(article_object)
 
     return headline_results
@@ -212,3 +214,20 @@ def get_science_category():
                     general_category_list)
 
     return general_category_results
+
+def get_newsid(id):
+    article_url = "https://newsapi.org/v2/everything?q={}&apiKey=67b973a2cb15466982de38b10153bfe5".format(
+        id)
+
+    with urllib.request.urlopen(article_url) as url:
+            news_category_data = url.read()
+            news_category_response = json.loads(news_category_data)
+
+            news_category_results = None
+
+            if news_category_response['articles']:
+                news_category_list = news_category_response['articles']
+                news_category_results = process_results(
+                    news_category_list)
+
+    return news_category_results
